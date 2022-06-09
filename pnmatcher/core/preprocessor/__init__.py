@@ -20,7 +20,7 @@ class Preprocessor():
     re_prep = re.compile(r'[\(\)]')
 
     reg_simple_format = [
-        r'(?:(?<=[ \A\b-\.\?])\d{3}[ \?\.-]\d{3}[ \?\.-]\d{4}(?=[ \Z\b-\.\?]))'
+        r'(?:(?<=[ \\A\b-\.\?])\d{3}[ \?\.-]\d{3}[ \?\.-]\d{4}(?=[ \\Z\b-\.\?]))'
     ]
     re_simple_format = re.compile(r'(?:'+r'|'.join(reg_simple_format)+r')')
 
@@ -70,7 +70,7 @@ class Preprocessor():
 
     def preprocess(self, raw):
         raw = raw.lower()
-        raw = raw.encode('ascii', 'ignore')
+        #raw = raw.encode('ascii', 'ignore')
         raw = self.prep_datetime(raw)
         raw = Preprocessor.re_prep.sub(' ', raw)
         raw = Preprocessor.re_all_regex.sub('', raw)
@@ -86,4 +86,4 @@ if __name__ == '__main__':
 
     preprocessor = Preprocessor()
     for sample in samples:
-        print preprocessor.preprocess(sample)
+        print(preprocessor.preprocess(sample))

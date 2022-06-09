@@ -12,7 +12,6 @@ clean misspelling number words and replace numeral words
 import re
 import sys
 import os
-from string import maketrans
 
 class Cleaner():
 
@@ -46,7 +45,7 @@ class Cleaner():
             "s1x": "six"
         }
 
-        for key in misspelling_dict.keys():
+        for key in list(misspelling_dict.keys()):
             raw = raw.replace(key, misspelling_dict[key])
         return raw
 

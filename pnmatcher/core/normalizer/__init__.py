@@ -11,7 +11,7 @@ import os
 class Normalizer():
     # try extracting from this one live escort reviews pnwrapper 754 307 7279 pnwrapper 49 91 3524432077 you won t be disappointedangel
 
-    re_digits = re.compile(r'(?:(?<=[ \s\b\Aa-zA-Z])[\d ]+(?=[ \s\b\Za-zA-Z]))')
+    re_digits = re.compile(r'(?:(?<=[ \s\b\\Aa-zA-Z])[\d ]+(?=[ \s\b\\Za-zA-Z]))')
 
     def normalize(self, cleaned_output, uncleaned_output, output_format='list'):
         # print [_.strip() for _ in Normalizer.re_digits.findall(tokenized_content) if _.strip() != '']

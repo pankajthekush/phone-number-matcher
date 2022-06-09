@@ -15,7 +15,7 @@ import re
 
 # from crf_tokenizer import CrfTokenizer
 from pnmatcher.vendor.crf.crf_tokenizer import CrfTokenizer
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 SOURCE_TYPE_TEXT = 'text'
 SOURCE_TYPE_URL = 'url'
@@ -40,7 +40,7 @@ class Tokenizer():
         self.source_type = source_type
 
     def remove_punctuation(self, raw):
-        return raw.translate(string.maketrans("",""), string.punctuation)
+        return raw.translate(str.maketrans('','',string.punctuation))
 
     def tokenize(self, raw):
         result = None

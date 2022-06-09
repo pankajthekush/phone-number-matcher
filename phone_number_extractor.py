@@ -32,7 +32,7 @@ class Preprocessor():
     re_prep = re.compile(r'[\(\)]')
 
     reg_simple_format = [
-        r'(?:(?<=[ \A\b-\.\?])\d{3}[ \?\.-]\d{3}[ \?\.-]\d{4}(?=[ \Z\b-\.\?]))'
+        r'(?:(?<=[ \\A\b-\.\?])\d{3}[ \?\.-]\d{3}[ \?\.-]\d{4}(?=[ \\Z\b-\.\?]))'
     ]
     re_simple_format = re.compile(r'(?:'+r'|'.join(reg_simple_format)+r')')
 

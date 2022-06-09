@@ -24,10 +24,10 @@ class Extractor():
     def __init__(self):
         pass
 
-    prefix = r'(?:(?<=[\A\b\sa-zA-Z])|^)'
+    prefix = r'(?:(?<=[\\A\b\sa-zA-Z])|^)'
     # prefix = r'\b'
     # prefix = r'[ ]?'
-    postfix = r'(?:(?=[\Z\b\sa-zA-Z])|$)'
+    postfix = r'(?:(?=[\\Z\b\sa-zA-Z])|$)'
     # postfix = r'\b'
     # postfix = r'[ ]?'
 
@@ -80,4 +80,4 @@ class Extractor():
 
 if __name__ == '__main__':
     text = 'i am tall 5 feet 8 inches and curvy 36 c 28 38 587 645 7772'
-    print Extractor().extract(text)
+    print(Extractor().extract(text))

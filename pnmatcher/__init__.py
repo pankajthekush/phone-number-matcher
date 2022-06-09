@@ -44,6 +44,7 @@ class PhoneNumberMatcher():
         self.output_format = _output_format
 
     def do_process(self, content, source_type='text', do_preprocess=True, do_tokenize=True, do_clean=True, do_extract=True, do_validate=True):
+
         if do_preprocess:
             content = self.preprocessor.preprocess(content)
 
@@ -54,11 +55,11 @@ class PhoneNumberMatcher():
         if do_clean: 
             content = self.cleaner.clean(content)
 
-        # if do_extract:
-        #     content = self.extractor.extract(content)
+        if do_extract:
+            content = self.extractor.extract(content)
 
-        # if do_validate:
-        #     content = self.validator.validate(content)
+        if do_validate:
+            content = self.validator.validate(content)
 
         return content
 

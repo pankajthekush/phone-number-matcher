@@ -22,7 +22,7 @@ class Validator():
     def validate_phone_number_with_coutry_code(self, raw, country_code='US'):
         try:
             z = phonenumbers.parse(raw, country_code)
-        except NumberParseException, e:
+        except NumberParseException as e:
             pass
 
             """
